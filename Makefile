@@ -14,6 +14,7 @@ C_OUT=${BINARY_PATH}/${PROJECT_NAME}
 all: ${C_OUT}
 
 ${C_OUT}: ${C_MAIN}
+	mkdir -p ${BINARY_PATH}
 	${CC} ${C_FLAGS} ${C_MAIN} -o ${C_OUT}
 	chmod +x ${C_OUT}
 
