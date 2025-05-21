@@ -7,8 +7,8 @@
 ![GitHub forks](https://img.shields.io/github/forks/freitaseric/strix-lang)
 ![GitHub watchers](https://img.shields.io/github/watchers/freitaseric/strix-lang)
 
-<!-- ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/freitaseric/strix-lang/build.yml)
-![Version Badge](https://img.shields.io/badge/version-pre--alpha-FF4500) -->
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/freitaseric/strix-lang/build.yml)
+<!-- ![Version Badge](https://img.shields.io/badge/version-pre--alpha-FF4500) -->
 
 </div>
 
