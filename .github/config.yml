@@ -1,0 +1,4 @@
+community:
+  files:
+    code_of_conduct: .github/CODE_OF_CONDUCT.md
+    contributing: .github/CONTRIBUTING.md
