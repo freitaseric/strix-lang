@@ -1,0 +1,8 @@
+*.c      diff=c
+*.h      diff=c
+
+Makefile diff=makefile
+*.mk     diff=makefile
+
+*.stx    diff=strix
+*.strix  diff=strix
