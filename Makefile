@@ -5,7 +5,7 @@ INCLUDE_PATH=include
 BINARY_PATH=bin
 
 CC=clang
-C_FLAGS=-std=c99 -Wall
+C_FLAGS=-std=c99 -Wall -ledit
 C_MAIN=${SOURCE_PATH}/${PROJECT_NAME}.c
 C_OUT=${BINARY_PATH}/${PROJECT_NAME}
 

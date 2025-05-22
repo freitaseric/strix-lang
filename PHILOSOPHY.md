@@ -1,4 +1,4 @@
-# **The Philosophy of Strix**  
+# The Philosophy of Strix 
 
 **Strix** is a compiled, low-level programming language designed to bring
 **clarity** and **precision** to systems programming. Like the owl (*Strix*) that
@@ -8,9 +8,9 @@ sacrificing accessibility.
 
 ---
 
-## **Core Principles**  
+## Core Principles
 
-### **1. *Claritas in Tenebris* (Clarity in Darkness)**  
+### 1. *Claritas in Tenebris* (Clarity in Darkness)
 
 - **Intuitive syntax**: Familiar constructs (e.g., `fun`, `var`, pattern matching)
 reduce cognitive load while preserving transparency.  
@@ -26,7 +26,7 @@ reduce cognitive load while preserving transparency.
 - **Documentation as a first-class citizen**: Examples, tutorials, and compiler
 hints for smooth onboarding.  
 
-### **2. Control Without Chaos**  
+### 2. Control Without Chaos
 
 - **Explicit memory management** with compile-time safeguards (e.g., against null
 pointers, buffer overflows).  
@@ -40,14 +40,14 @@ pointers, buffer overflows).
 
 - **No hidden behaviors**: Type conversions and operations are always intentional.
 
-### **3. Transparent Performance**  
+### 3. Transparent Performance
 
 - **Native compilation** (via LLVM or custom backend) with predictable optimizations.
 - **Zero-cost abstractions**: No runtime overhead for features like iterators or
 RAII.
 - **Seamless C/Rust FFI**: Interoperate with existing ecosystems effortlessly.  
 
-### **4. For Humans Navigating Low-Level Complexity**  
+### 4. For Humans Navigating Low-Level Complexity
 
 - **Gentle learning curve**: High-level readability meets low-level explicitness.
 
@@ -62,7 +62,7 @@ RAII.
 
 ---
 
-## **Non-Goals**  
+## Non-Goals
 
 - ❌ **Not a scripting language**: No interpreter or dynamic typing by default.  
 - ❌ **Not an academic experiment**: Pragmatism over purity.  
@@ -71,7 +71,7 @@ systems programming.
 
 ---
 
-## **Inspirations**  
+## Inspirations
 
 | Language | Lessons Learned          | Strix’s Twist           |
 | -------- | ------------------------ | ----------------------- |
@@ -82,7 +82,7 @@ systems programming.
 
 ---
 
-## **Example: Safe Memory Allocation**  
+## Example: Safe Memory Allocation
 
 ```strix
 fun main() -> void {
@@ -99,7 +99,7 @@ fun main() -> void {
 
 ---
 
-## **Why "Strix"?**  
+## Why "Strix"?
 
 - 🦉 **Symbolizes technical wisdom**: Seeing order in the chaos of bits.  
 - ⚡ **Balances power and approachability**: Agile in complexity, like an owl in flight.
@@ -107,7 +107,7 @@ fun main() -> void {
 
 ---
 
-### **Next Steps**  
+### Next Steps
 
 1. **Try *Strix***: [Install instructions](./README.md#installation).
 2. **Join the design process**: Open RFCs for language features.  
