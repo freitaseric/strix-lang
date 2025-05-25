@@ -1,4 +1,5 @@
 ---
+import "dayjs/locale/pt-br"
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
@@ -7,6 +8,7 @@ import { SITE } from "@/config";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
+dayjs.locale('pt-br');
 
 export interface Props {
   class?: string;
@@ -29,8 +31,8 @@ const latestDatetime =
   modDatetime && modDatetime > pubDatetime ? modDatetime : pubDatetime;
 const datetime = dayjs(latestDatetime).tz(postTimezone || SITE.timezone);
 
-const date = datetime.format("D MMM, YYYY"); // e.g., '22 Mar, 2025'
-const time = datetime.format("hh:mm A"); // e.g., '08:30 PM'
+const date = datetime.format("D MMMM, YYYY"); // e.g., '22 Mar, 2025'
+const time = datetime.format("HH:mm"); // e.g., '08:30 PM'
 ---
 
 <div class:list={["flex items-end space-x-2 opacity-80", className]}>
@@ -43,10 +45,10 @@ const time = datetime.format("hh:mm A"); // e.g., '08:30 PM'
   {
     modDatetime && modDatetime > pubDatetime ? (
       <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
-        Updated:
+        Atualizado:
       </span>
     ) : (
-      <span class="sr-only">Published:</span>
+      <span class="sr-only">Publicado:</span>
     )
   }
   <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>

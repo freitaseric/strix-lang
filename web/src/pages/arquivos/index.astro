@@ -16,28 +16,28 @@ if (!SITE.showArchives) {
 const posts = await getCollection("blog", ({ data }) => !data.draft);
 
 const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
 ];
 ---
 
-<Layout title={`Archives | ${SITE.title}`}>
+<Layout title={`Arquivos | ${SITE.title}`}>
   <Header />
-  <Main pageTitle="Archives" pageDesc="All the articles I've archived.">
+  <Main pageTitle="Arquivos" pageDesc="Todos os artigos que arquivei.">
     {
       Object.entries(
         getPostsByGroupCondition(posts, post =>
-          post.data.pubDatetime.getFullYear()
+          post.data.pubDatetime.getFullYear()   
         )
       )
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))

@@ -2,8 +2,8 @@ export const SITE = {
   website: "https://strix-lang.vercel.app/",
   author: "Eric Freitas",
   profile: "https://github.com/freitaseric",
-  desc: "A WIP low-level, compiled, fast programming language",
-  title: "Strix Language",
+  desc: "Uma linguagem de programação de baixo nível, com sitaxe de alto nível",
+  title: "Linguagem Strix",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
@@ -13,10 +13,10 @@ export const SITE = {
   showBackButton: true,
   editPost: {
     enabled: true,
-    text: "Suggest Changes",
+    text: "Sugerir Modificações",
     url: "https://github.com/freitaseric/strix-lang/edit/main/",
   },
   dynamicOgImage: true,
-  lang: "en",
+  lang: "pt-br",
   timezone: "America/Boa_Vista",
 } as const;

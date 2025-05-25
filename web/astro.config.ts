@@ -9,14 +9,13 @@ export default defineConfig({
   site: SITE.website,
   integrations: [
     sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
+      filter: page => SITE.showArchives || !page.endsWith("/arquivos"),
     }),
   ],
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Sumário" }]],
     shikiConfig: {
-      // For more themes, visit https://shiki.style/themes
-      themes: { light: "min-light", dark: "night-owl" },
+      themes: { light: "min-light", dark: "poimandres" },
       wrap: true,
     },
   },

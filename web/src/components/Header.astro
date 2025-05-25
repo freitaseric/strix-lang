@@ -29,7 +29,7 @@ const isActive = (path: string) => {
     href="#main-content"
     class="absolute -top-full left-16 z-50 bg-background px-3 py-2 text-accent backdrop-blur-lg transition-all focus:top-4"
   >
-    Skip to content
+    Ir ao conteúdo
   </a>
   <div
     id="nav-container"
@@ -69,8 +69,8 @@ const isActive = (path: string) => {
           ]}
         >
           <li class="col-span-2">
-            <a href="/posts" class:list={{ "active-nav": isActive("/posts") }}>
-              Posts
+            <a href="/postagens" class:list={{ "active-nav": isActive("/postagens") }}>
+              Postagens
             </a>
           </li>
           <li class="col-span-2">
@@ -79,42 +79,42 @@ const isActive = (path: string) => {
             </a>
           </li>
           <li class="col-span-2">
-            <a href="/about" class:list={{ "active-nav": isActive("/about") }}>
-              About
+            <a href="/sobre" class:list={{ "active-nav": isActive("/sobre") }}>
+              Sobre
             </a>
           </li>
           {
             SITE.showArchives && (
               <li class="col-span-2">
                 <LinkButton
-                  href="/archives"
+                  href="/arquivos"
                   class:list={[
                     "focus-outline flex justify-center p-3 sm:p-1",
                     {
-                      "active-nav [&>svg]:stroke-accent": isActive("/archives"),
+                      "active-nav [&>svg]:stroke-accent": isActive("/arquivos"),
                     },
                   ]}
                   ariaLabel="archives"
                   title="Archives"
                 >
                   <IconArchive class="hidden sm:inline-block" />
-                  <span class="sm:sr-only">Archives</span>
+                  <span class="sm:sr-only">Arquivos</span>
                 </LinkButton>
               </li>
             )
           }
           <li class="col-span-1 flex items-center justify-center">
             <LinkButton
-              href="/search"
+              href="/pesquisar"
               class:list={[
                 "focus-outline flex p-3 sm:p-1",
-                { "[&>svg]:stroke-accent": isActive("/search") },
+                { "[&>svg]:stroke-accent": isActive("/pesquisar") },
               ]}
               ariaLabel="search"
               title="Search"
             >
               <IconSearch />
-              <span class="sr-only">Search</span>
+              <span class="sr-only">Pesquisar</span>
             </LinkButton>
           </li>
           {
@@ -153,7 +153,7 @@ const isActive = (path: string) => {
       const openMenu = menuBtn.getAttribute("aria-expanded") === "true";
 
       menuBtn.setAttribute("aria-expanded", openMenu ? "false" : "true");
-      menuBtn.setAttribute("aria-label", openMenu ? "Open Menu" : "Close Menu");
+      menuBtn.setAttribute("aria-label", openMenu ? "Abrir Menu" : "Fechar Menu");
 
       menuItems.classList.toggle("hidden");
       menuIcon.classList.toggle("hidden");
