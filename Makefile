@@ -1,25 +1,46 @@
-PROJECT_NAME=strix
+TARGET = bin/strix
 
-SOURCE_PATH=src
-INCLUDE_PATH=include
-BINARY_PATH=bin
+CC = clang
+CFLAGS = -g -Wall -Isrc
+LDFLAGS =
 
-CC=clang
-C_FLAGS=-std=c99 -Wall -ledit
-C_MAIN=${SOURCE_PATH}/${PROJECT_NAME}.c
-C_OUT=${BINARY_PATH}/${PROJECT_NAME}
+UNAME_S := $(shell uname -s)
 
-.PHONY: ${C_OUT}, all, run, clean
+ifeq ($(UNAME_S),Linux)
+    LDFLAGS += -ledit
+else ifeq ($(UNAME_S),Darwin)
+    LDFLAGS += -ledit
+endif
 
-all: ${C_OUT}
+SRC_DIR = src
+OBJ_DIR = obj
 
-${C_OUT}: ${C_MAIN}
-	mkdir -p ${BINARY_PATH}
-	${CC} ${C_FLAGS} ${C_MAIN} -o ${C_OUT}
-	chmod +x ${C_OUT}
+SOURCES = $(wildcard $(SRC_DIR)/*.c)
 
-run: ${C_OUT}
-	${C_OUT}
+HEADERS = $(wildcard $(SRC_DIR)/*.h)
 
-clean: ${C_OUT}
-	rm -rf ${BINARY_PATH}
+OBJECTS = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SOURCES))
+
+all: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	@echo "Linking to $(TARGET)..."
+	$(CC) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+	@echo "$(TARGET) created!"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+	@mkdir -p $(OBJ_DIR)
+	@echo "Compiling $< -> $@..."
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	@echo "Cleaning generated files..."
+	rm -f $(OBJ_DIR)/*.o $(TARGET)
+	@echo "Clean successfully complete!"
+
+.PHONY: all clean
+
+list-files:
+	@echo "Source files (.c): $(SOURCES)"
+	@echo "Header files (.h): $(HEADERS)"
+	@echo "Object files (.o): $(OBJECTS)"

@@ -1,40 +1,28 @@
-#define VERSION "pre_aplha"
-
 #include <stdio.h>
-#include <stdlib.h>
+#include "utils.h"
+#include "repl.h"
 
-#ifdef _WIN32
-#define BUFFER_SIZE 2048 
-#include <string.h>
-
-static char buffer[BUFFER_SIZE];
-
-char* readline(char* prompt) {
-  fputs(prompt, stdout);
-  fgets(buffer, BUFFER_SIZE, stdin);
-  char* cpy = malloc(strlen(buffer)+1);
-  strcpy(cpy, buffer);
-  cpy[strlen(cpy)-1] = '\0';
-  return cpy;
-}
-
-void add_history(char* unused);
-#else
-#include <editline/readline.h>
-#endif // _WIN32
-
-int main(int argc, char **argcv)
+int main(int argc, char *argv[])
 {
-  printf("Strix Version %s\n", VERSION);
-  puts("Press Ctrl+c to Exit\n");
-
-  while (1)
+  if (argc < 2)
   {
-    char *input = readline("strix> ");
-    add_history(input);
+    fprintf(stderr, "Usage: %s <command>\n", argv[0]);
+    fprintf(stderr, "Available: repl\n");
+    return 1;
+  }
 
-    printf("No you're a %s\n", input);
-    free(input);
+  CommandType cmd = get_command_type(argv[1]);
+
+  switch (cmd)
+  {
+  case CMD_REPL:
+    repl();
+    break;
+  case CMD_UNKNOWN:
+  default:
+    fprintf(stderr, "Unknown command: %s\n", argv[1]);
+    fprintf(stderr, "Available commands: repl\n");
+    return 1;
   }
 
   return 0;

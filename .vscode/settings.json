@@ -40,5 +40,9 @@
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
     "eslint.config.*": ".prettierrc*, .prettierignore, .eslintignore"
+  },
+  "files.associations": {
+    ".env.*": "dotenv",
+    "stdio.h": "c"
   }
 }
