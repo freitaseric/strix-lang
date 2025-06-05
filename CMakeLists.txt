@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(strix VERSION 1.0 LANGUAGES C)
+project(strix VERSION 1.0 LANGUAGES C CXX)
 
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED True)
@@ -21,8 +21,12 @@ file(GLOB_RECURSE SOURCES "${SOURCE_DIR}/*.c")
 
 file(GLOB_RECURSE HEADERS "${SOURCE_DIR}/*.h")
 
+add_library(strix_tokenizer src/token.cpp src/strix_tokenizer_api.cpp)
+target_include_directories(strix_tokenizer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
+target_link_libraries(${PROJECT_NAME} PRIVATE strix_tokenizer)
 target_link_libraries(${PROJECT_NAME} PRIVATE PkgConfig::PC_LIBEDIT)
 
 message(STATUS "C Compiler: ${CMAKE_C_COMPILER}")
