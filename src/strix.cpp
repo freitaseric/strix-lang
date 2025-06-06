@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
     break;
   case strix::CommandType::UNKNOWN:
   default:
-    fprintf(stderr, "Unknown command: %s\n", argv[1]);
-    fprintf(stderr, "Available commands: repl\n");
+    strix::eprintf("Unknown command: %s\n", argv[1]);
+    strix::eprintln("Available commands: repl");
     return 1;
   }
 
