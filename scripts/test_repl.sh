@@ -2,7 +2,7 @@
 
 # --- Setting Up ---
 REPL_EXECUTABLE="scripts/repl.sh"
-EXPECTED_EXIT_MESSAGE="Exiting the Strix REPL"
+EXPECTED_EXIT_MESSAGE="Exiting Strix..."
 TEMP_OUTPUT_FILE="repl_output.tmp"
 
 # --- Cleaning Function ---
