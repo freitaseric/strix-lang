@@ -1,18 +1,6 @@
-#include "utils.hpp"
-#include <iostream>
-#include <cstdarg>
-#include <sstream>
+#include "io.hpp"
 
-namespace strix
-{
-  CommandType get_command_type(std::string command_str)
-  {
-    if (command_str == "repl")
-      return CommandType::REPL;
-    else
-      return CommandType::UNKNOWN;
-  }
-
+namespace strix::io {
   void println(std::string str)
   {
     std::cout << str << std::endl;
@@ -123,19 +111,5 @@ namespace strix
     }
 
     va_end(args);
-  }
-
-  std::vector<std::string> split_string(const std::string &str)
-  {
-    std::stringstream ss(str);
-    std::string word;
-    std::vector<std::string> result;
-
-    while (ss >> word)
-    {
-      result.push_back(word);
-    }
-
-    return result;
   }
 }
