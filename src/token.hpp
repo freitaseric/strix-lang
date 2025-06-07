@@ -72,7 +72,7 @@ public:
   int column;
 
   Token(TokenType type, std::string &lexeme, int line, int column);
-  Token(TokenType typr, std::string &&lexeme, int line, int column);
+  Token(TokenType type, std::string &&lexeme, int line, int column);
 
   std::string to_string() const;
 };
