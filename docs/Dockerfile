@@ -2,7 +2,7 @@ FROM node:lts-alpine AS build
 
 WORKDIR /app
 
-RUN npm i bun
+RUN npm i -g bun
 
 COPY package.json bun.lock ./
 
